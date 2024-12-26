@@ -5,7 +5,6 @@ const BASE_URL = 'http://localhost:3000/api/v1/games';
 export const get_games = async () => {
     try {
         const response = await axios.get(`${BASE_URL}.json`);
-        console.log(response)
         return response.data;
     } catch (error) {
         console.error('Erro ao buscar jogos:', error);
@@ -25,7 +24,12 @@ export const get_by_id = async (id) => {
 
 export const create_game = async (game) => {
     try {
-        const response = await axios.post(BASE_URL, game);
+        const response = await axios.post(BASE_URL, game, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Origin': 'http://localhost:4000',
+              }
+        });
         return response.data;
     } catch (error) {
         console.error('Erro ao criar jogo:', error);
@@ -33,12 +37,12 @@ export const create_game = async (game) => {
     }
 }
 
-export const update_game = async (game) => {
+export const update_game = async (game, id) => {
     try {
-        const response = await axios.patch(`${BASE_URL}/${game.id}`, game);
+        const response = await axios.patch(`${BASE_URL}/${id}`, game);
         return response.data;
     } catch (error) {
-        console.error(`Erro ao atualizar o jogo com id ${game.id}:`, error);
+        console.error(`Erro ao atualizar o jogo com id ${id}:`, error);
         throw error;
     }
 }
