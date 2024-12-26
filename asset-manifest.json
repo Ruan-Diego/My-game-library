@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/My-game-library/static/css/main.518a734c.css",
+    "main.js": "/My-game-library/static/js/main.a56c5c93.js",
+    "static/js/488.e75445ad.chunk.js": "/My-game-library/static/js/488.e75445ad.chunk.js",
+    "static/media/InterVariable-Italic.woff2": "/My-game-library/static/media/InterVariable-Italic.e295f70fe3e2df296c7b.woff2",
+    "static/media/InterVariable.woff2": "/My-game-library/static/media/InterVariable.a0e477f2f1f9d2376fde.woff2",
+    "static/media/primeicons.svg": "/My-game-library/static/media/primeicons.6ed59f962963a4a73af2.svg",
+    "static/media/primeicons.eot": "/My-game-library/static/media/primeicons.ff0c4cd79b2ffca2de54.eot",
+    "static/media/primeicons.woff": "/My-game-library/static/media/primeicons.8931fda1930c3bd21e96.woff",
+    "static/media/primeicons.ttf": "/My-game-library/static/media/primeicons.a5c2a53d1ff7a9ff5933.ttf",
+    "static/media/primeicons.woff2": "/My-game-library/static/media/primeicons.024b32cc7bf399b1a847.woff2",
+    "index.html": "/My-game-library/index.html",
+    "main.518a734c.css.map": "/My-game-library/static/css/main.518a734c.css.map",
+    "main.a56c5c93.js.map": "/My-game-library/static/js/main.a56c5c93.js.map",
+    "488.e75445ad.chunk.js.map": "/My-game-library/static/js/488.e75445ad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.518a734c.css",
+    "static/js/main.a56c5c93.js"
+  ]
+}
