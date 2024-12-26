@@ -8,6 +8,10 @@ class Game < ApplicationRecord
     end
 
     def avg_score
-        reviews.average(:score).round(2).to_f
+        reviews.average(:score).round(1) || 0
+    end
+
+    def as_json(options = {})
+        super(options.merge(methods: :avg_score))
     end
 end

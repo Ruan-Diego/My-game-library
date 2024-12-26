@@ -1,16 +1,15 @@
 module Api
   module V1
     class GamesController < ApiController
-      protect_from_forgery with: :null_session 
       
       # GET /api/v1/games
       def index
-        render json: serializer(games, options)
+        render json: serializer(games)
       end
       
       # GET /api/v1/games/:id
       def show
-        render json: serializer(game, options)
+        render json: serializer(game)
       end
 
       # POST /api/v1/games
@@ -29,7 +28,7 @@ module Api
         game = Game.find_by(id: params[:id])
 
         if game.update(game_params)
-          render json: serializer(game, options)
+          render json: serializer(game)
         else
           render json: errors(game), status: 422
         end
@@ -48,11 +47,6 @@ module Api
 
       private
 
-      # Used For compound documents with fast_jsonapi
-      def options
-        @options ||= { include: %i[reviews] }
-      end
-
       # Get all games
       def games
         @games ||= Game.includes(:reviews).all
@@ -65,7 +59,7 @@ module Api
 
       # Strong params
       def game_params
-        params.require(:game).permit(:name, :image_url)
+        params.require(:game).permit(:name, :image_url, :valor)
       end
 
       # fast_jsonapi serializer
