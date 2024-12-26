@@ -1,6 +1,7 @@
 module Api
   module V1
     class GamesController < ApiController
+      protect_from_forgery with: :null_session
       
       # GET /api/v1/games
       def index
@@ -14,6 +15,8 @@ module Api
 
       # POST /api/v1/games
       def create
+        Rails.logger.debug("Game Params: #{game_params}") # Exibe os parâmetros no log
+
         game = Game.new(game_params)
 
         if game.save
